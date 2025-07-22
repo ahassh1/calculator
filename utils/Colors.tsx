@@ -4,7 +4,7 @@ export const Colors ={
   btnLight: "#E0E0E0",  
   btnDark: "#333333",  
   btnRight: "#4F46E5",  
-  black: "#000000",   
-  white: "#FFFFFF",   
-  gray: "#9CA3AF", 
-};
+  black: "#000000",    
+  white: "#FFFFFF",     
+  gray: "#f1f3f8ff", 
+}
