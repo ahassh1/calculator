@@ -10,7 +10,7 @@ export default function Calculator() {
         <Text style={{fontSize:59, fontWeight:400}}>234354</Text>
       </View>
       <View style={styles.keypad}>
-     <Button/>
+     <Button title='C'/>
       </View>
     </View>
   )
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.gray,
         paddingVertical:20,
         paddingHorizontal:40,
-        justifyContent:'center',
+        justifyContent:'flex-end',
         alignItems:'flex-end'
     },
     keypad:{

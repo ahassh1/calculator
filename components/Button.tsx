@@ -1,11 +1,12 @@
 
+import { Colors } from '@/utils/Colors'
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
-const Button = () => {
+const Button = ({title,type}:{title: string, type:'top' | 'right' | 'number'}) => {
   return (
         <TouchableOpacity  style={styles.button} onclick={()=>{}}>
-              <Text style={{fontSize:35}}>0</Text>
+              <Text style={{fontSize:35,color:Colors.white}}>{title}</Text>
            </TouchableOpacity>
   )
 }
@@ -19,7 +20,8 @@ const styles = StyleSheet.create({
     borderRadius:10,
     padding:10,
     alignItems:'center',
-    justifyContent:'center'
+    justifyContent:'center',
+    backgroundColor:Colors.dark
  }    
 
 })
