@@ -5,8 +5,10 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 const Button = ({title,type}:{title: string, type:'top' | 'right' | 'number'}) => {
   return (
-        <TouchableOpacity  style={styles.button} onclick={()=>{}}>
-              <Text style={{fontSize:35,color:Colors.white}}>{title}</Text>
+        <TouchableOpacity  style={[styles.button, {
+         backgroundColor:type=='top' ? Colors.btnDark : type=='right' ? Colors.btnRight : Colors.btnLight,
+        }]} onclick={()=>{}}>
+              <Text style={{fontSize:35,color: type == 'number' ? Colors.black :Colors.white}}>{title}</Text>
            </TouchableOpacity>
   )
 }
