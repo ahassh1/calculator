@@ -40,6 +40,16 @@ const handleCalcutation =()=>{
   setFirstValue('')
 }
 
+const handleClear = () =>{
+  setDisplayValue('0');
+  setOperator('');
+  setFirstValue('')
+}
+
+const handleDelete =()=>{
+  setDisplayValue(displayValue.slice(0,-1))
+}
+
   return (
     <View style={styles.container}>
       <View style={styles.display}>
@@ -47,8 +57,8 @@ const handleCalcutation =()=>{
         <Text style={{fontSize:59, fontWeight:'400'}}>{displayValue}</Text>
       </View>
       <View style={styles.keypad}>
-     <Button title='C' type='top' onPress={() => handleOperatorInput('C')}/>
-     <Button title='⨂'type='top' oonPress={() => handleOperatorInput('⨂')}/>
+     <Button title='C' type='top' onPress={handleClear}/>
+     <Button title='⨂'type='top' oonPress={ handleDelete}/>
      <Button title='%'type='top' oonPress={() => handleOperatorInput('%')}/>
      <Button title='÷'type='right' onPress={() => handleOperatorInput('÷')}/>
      <Button title='7' type='number'onPress={() => handleNumberInput('7')}/>
@@ -66,7 +76,7 @@ const handleCalcutation =()=>{
      <Button title='0' type='number' onPress={() => handleNumberInput('0')}/>
      <Button title='00' type='number' onPress={() => handleNumberInput('00')}/>
      <Button title='.' type='number' onPress={() => handleNumberInput('.')}/>
-     <Button title='=' type='right' onPress={() => handleOperatorInput('=')}/>
+     <Button title='=' type='right' onPress={handleCalcutation}/>
       </View>
     </View>
   )
