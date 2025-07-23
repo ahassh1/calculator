@@ -1,13 +1,15 @@
 
-import { Colors } from '@/utils/Colors'
-import React from 'react'
-import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { Colors } from '@/utils/Colors';
+import React from 'react';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const Button = ({title,type}:{title: string, type:'top' | 'right' | 'number'}) => {
+const Button = ({title,type, onpress}:{title: string, type:'top' | 'right' | 'number';
+   onpress: Function
+}) => {
   return (
         <TouchableOpacity  style={[styles.button, {
          backgroundColor:type=='top' ? Colors.btnDark : type=='right' ? Colors.btnRight : Colors.btnLight,
-        }]} onclick={()=>{}}>
+        }]} onclick={onpress}>
               <Text style={{fontSize:35,color: type == 'number' ? Colors.black :Colors.white}}>{title}</Text>
            </TouchableOpacity>
   )
